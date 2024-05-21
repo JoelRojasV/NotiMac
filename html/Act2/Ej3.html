@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocompletado</title>
+    <style>
+        #suggestions {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="Buscar...">
+    <ul id="suggestions"></ul>
+
+    <script>
+        const suggestions = [
+            'JavaScript',
+            'Python',
+            'Java',
+            'C++',
+            'Ruby',
+            'Swift',
+            'Go',
+            'Kotlin',
+            'Rust',
+            'PHP'
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const suggestionsContainer = document.getElementById('suggestions');
+
+        searchInput.addEventListener('input', () => {
+            const value = searchInput.value.toLowerCase();
+            suggestionsContainer.innerHTML = '';
+
+            suggestions.forEach(suggestion => {
+                if (suggestion.toLowerCase().includes(value)) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = suggestion;
+                    suggestionsContainer.appendChild(listItem);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
