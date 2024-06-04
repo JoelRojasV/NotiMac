@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrastrar y Soltar</title>
+    <style>
+        #source, #target {
+            border: 1px solid black;
+            padding: 20px;
+            width: 200px;
+            height: 100px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="source" draggable="true">
+        <p>Arrastra este elemento</p>
+    </div>
+    <div id="target"></div>
+
+    <script>
+        const source = document.getElementById('source');
+        const target = document.getElementById('target');
+
+        source.addEventListener('dragstart', dragStart);
+        target.addEventListener('dragover', dragOver);
+        target.addEventListener('drop', drop);
+
+        function dragStart(e) {
+            e.dataTransfer.setData('text/plain', e.target.innerHTML);
+        }
+
+        function dragOver(e) {
+            e.preventDefault();
+        }
+
+        function drop(e) {
+            e.preventDefault();
+            target.innerHTML = e.dataTransfer.getData('text/plain');
+        }
+    </script>
+</body>
+</html>

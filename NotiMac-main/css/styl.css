@@ -1,0 +1,121 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    overflow: hidden;
+    padding: 0;
+}
+
+section{
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+aside{
+    float: left;
+    width: 20%;
+    background-color: burlywood;
+    padding: 20px;
+    color: #000;
+    font-size: 20px;
+}
+
+.destacadas, .recientes {
+    margin-bottom: 2rem;
+}
+
+.destacadas h2, .recientes h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+}
+
+article {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+article h3 {
+    margin-top: 0;
+}
+
+article a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    clear: both;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.Login_buttom{
+    color: #ff1818;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+@media (max-width: 760px){
+    aside, section{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+}
