@@ -1,7 +1,7 @@
 <?php
     // Configuración de la base de datos
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "bd_notimac";
+    $bd_host = "localhost";
+    $bd_user = "root";
+    $bd_pass = "";
+    $bd_name = "bd_notimac";
 ?>
