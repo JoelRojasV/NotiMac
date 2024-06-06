@@ -36,17 +36,24 @@ loginForm.onsubmit = function(event) {
         username: username,
         password: password
     };
-
+    console.log(formData)
     // Realizar solicitud Fetch al servidor PHP
-    fetch('../php/login.php', {
+    fetch('../js/login.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error en el servidor: ${response.status}`);
+        }
+        return response.json(); // Parsear la respuesta como JSON
+    })
+
     .then(data => {
+        console.log(data);
         if (data.success) {
             // Autenticación exitosa
             logoutBtn.style.display = 'inline';
@@ -61,7 +68,7 @@ loginForm.onsubmit = function(event) {
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('Ha ocurrido un error al intentar iniciar sesión');
+        alert(`Ha ocurrido un error: ${error.message}`);
     });
 }
 

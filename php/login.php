@@ -18,9 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $data['password'];
 
     // Consultar la base de datos para autenticar al usuario
-    $query = "SELECT * FROM users WHERE username =?";
+    $query = "SELECT * FROM users WHERE username = ?";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('ss', $username, $password);
+    $stmt->bind_param('s', $username);
     $stmt->execute();
     $resultado = $stmt->get_result();
     $user = $resultado->fetch_assoc();
@@ -66,8 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Devolver la respuesta como JSON
     $response = array(
-        'uccess' => $success,
-        'essage' => $message,
+        'success' => $success,
+        'message' => $message,
         'news' => $noticias
     );
 
