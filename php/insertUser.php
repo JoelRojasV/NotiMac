@@ -2,7 +2,7 @@
 include_once "config.php";
 
 // Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($bd_host, $bd_user, $bd_pass, $bd_name);
 
 // Verificar conexión
 if ($conn->connect_error) 
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $user = $_POST['registerUser'];
     $pass = $_POST['registerPass'];
-    $pass = password_hash($pass, PASSWORD_DEFAULT);
+    //$pass = password_hash($pass, PASSWORD_DEFAULT);
 
     // Insertar usuario
     $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");

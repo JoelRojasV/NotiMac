@@ -36,7 +36,7 @@ loginForm.onsubmit = function(event) {
         username: username,
         password: password
     };
-
+    
     // Realizar solicitud Fetch al servidor PHP
     fetch('../php/login.php', {
         method: 'POST',
@@ -45,8 +45,15 @@ loginForm.onsubmit = function(event) {
         },
         body: JSON.stringify(formData)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error en el servidor: ${response.status}`);
+        }
+        return response.json(); // Parsear la respuesta como JSON
+    })
+
     .then(data => {
+        console.log(data);
         if (data.success) {
             // Autenticación exitosa
             logoutBtn.style.display = 'inline';
@@ -61,7 +68,7 @@ loginForm.onsubmit = function(event) {
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('Ha ocurrido un error al intentar iniciar sesión');
+        alert(`Ha ocurrido un error: ${error.message}`);
     });
 }
 
@@ -70,7 +77,7 @@ logoutBtn.onclick = function() {
     // Aquí debes enviar una solicitud AJAX/Fetch al servidor PHP para cerrar la sesión del usuario
     // Después de cerrar la sesión, muestra el botón de inicio de sesión y oculta el de cierre de sesión
     // También puedes limpiar el contenido de las noticias
-
+    fetch('../php/logout.php');
     // Ejemplo de cierre de sesión
     logoutBtn.style.display = 'none';
     loginBtn.style.display = 'inline';
