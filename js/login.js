@@ -36,9 +36,9 @@ loginForm.onsubmit = function(event) {
         username: username,
         password: password
     };
-    console.log(formData)
+    
     // Realizar solicitud Fetch al servidor PHP
-    fetch('../js/login.php', {
+    fetch('../php/login.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -77,7 +77,7 @@ logoutBtn.onclick = function() {
     // Aquí debes enviar una solicitud AJAX/Fetch al servidor PHP para cerrar la sesión del usuario
     // Después de cerrar la sesión, muestra el botón de inicio de sesión y oculta el de cierre de sesión
     // También puedes limpiar el contenido de las noticias
-
+    fetch('../php/logout.php');
     // Ejemplo de cierre de sesión
     logoutBtn.style.display = 'none';
     loginBtn.style.display = 'inline';

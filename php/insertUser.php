@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $user = $_POST['registerUser'];
     $pass = $_POST['registerPass'];
-    $pass = password_hash($pass, PASSWORD_DEFAULT);
+    //$pass = password_hash($pass, PASSWORD_DEFAULT);
 
     // Insertar usuario
     $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
