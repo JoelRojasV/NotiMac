@@ -4,12 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticias</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        .crear-noticia {
-            display: none; /* Inicialmente ocultar el div */
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
@@ -22,18 +17,19 @@
         </nav>
     </header>
     <main>
-        <section id="news-feed">
-            
-        </section>
-        <section class="crear-noticia">
-            <h2>Crear nueva noticia</h2>
-            <form id="crear-noticia-form" enctype="multipart/form-data">
-                <input type="text" id="titulo" placeholder="Título" required>
-                <textarea id="contenido" placeholder="Contenido" required></textarea>
-                <input type="file" id="imagen" accept="image/*" required>
-                <button type="submit">Crear noticia</button>
-            </form>
-        </section>
+            <section id="news-feed">
+                
+            </section>
+            <section class="crear-noticia">
+                <h2>Crear nueva noticia</h2>
+                <form id="crear-noticia-form" enctype="multipart/form-data">
+                    <input type="text" id="titulo" placeholder="Título" required>
+                    <textarea id="contenido" placeholder="Contenido" required></textarea>
+                    <input type="file" id="imagen" accept="image/*" required>
+                    <button type="submit">Crear noticia</button>
+                </form>
+            </section>
+        
     </main>
 
     <!-- Modal de inicio de sesión / Cuadro de inicio de sesion-->
@@ -54,7 +50,9 @@
     <script src="../js/noticiaRender.js"></script>
 
     <footer>
-        <p>&copy; 2024 NotiMac. Todos los derechos reservados.</p>
+        <a href="https://mac.acatlan.unam.mx/portada/">Pagina de MAC</a>
+        <a href="aboutUs.html">About Us</a>
+        <p> &copy; 2024 NotiMac. Todos los derechos reservados.</p>
     </footer>
 
 </body>

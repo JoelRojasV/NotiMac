@@ -7,7 +7,7 @@ const loginForm = document.getElementById('login-form');
 const newsFeed = document.getElementById('news-feed');
 const crearNoticiaForm = document.getElementById('crear-noticia-form');
 
-newsFeed.innerHTML = '<h2>Noticias</h2><p>Para ver las noticias, inicia sesión</p>';
+newsFeed.innerHTML = '<h2>Noticias</h2><p>Para ver las noticias, inicia sesión</p> <img src="../image/coco.jpg" alt="Imagen 1" onclick="">"';
 
 // Abrir modal de inicio de sesión
 loginBtn.onclick = function() {
@@ -126,7 +126,6 @@ crearNoticiaForm.addEventListener('submit', (event) => {
 logoutBtn.onclick = function() {
     // Para cerrar la sesión del usuario
     // Después de cerrar la sesión, muestra el botón de inicio de sesión y oculta el de cierre de sesión
-    // También puedes limpiar el contenido de las noticias
     fetch('../php/logout.php');
     // Ejemplo de cierre de sesión
     logoutBtn.style.display = 'none';
